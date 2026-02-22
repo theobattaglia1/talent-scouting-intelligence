@@ -1,0 +1,5 @@
+source_type,name,platform,id_or_key,genre_focus,region_focus,notes
+subreddit,popheads,reddit,popheads,pop/indie pop,US/UK,
+subreddit,indieheads,reddit,indieheads,indie pop/alt rock,US/UK,
+subreddit,folk,reddit,folk,indie folk,US/UK,
+subreddit,CountryMusicStuff,reddit,CountryMusicStuff,country-pop,US,

@@ -1,0 +1,6 @@
+.venv/
+*.pyc
+.DS_Store
+.env.local
+outputs/
+src/talent_scouting_intelligence.egg-info/

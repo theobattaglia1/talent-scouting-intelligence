@@ -1,0 +1,190 @@
+{
+  "youtube_channels": [
+    {
+      "channel_id": "UC2Qw1dzXDBAZPwS7zm37g8g",
+      "name": "COLORS",
+      "genre_tags": [
+        "pop",
+        "indie pop",
+        "alt rock"
+      ],
+      "estimated_followers": 2500000
+    },
+    {
+      "channel_id": "UC4eYXhJI4-7wSWc8UNRwD4A",
+      "name": "NPR Music",
+      "genre_tags": [
+        "singer-songwriter",
+        "indie folk",
+        "alt rock"
+      ],
+      "estimated_followers": 8000000
+    },
+    {
+      "channel_id": "UCG36u-k09zdIPQh5EEdVgTA",
+      "name": "Mahogany",
+      "genre_tags": [
+        "singer-songwriter",
+        "indie pop"
+      ],
+      "estimated_followers": 1800000
+    }
+  ],
+  "spotify_playlists": [
+    {
+      "playlist_id": "5ljYCVkMnPJa5Lb7Bl53Al",
+      "name": "Fresh Finds",
+      "genre_tags": [
+        "indie pop",
+        "singer-songwriter",
+        "alt rock"
+      ],
+      "region": "United States"
+    },
+    {
+      "playlist_id": "4mBdqe9UgLpaAThL9et8YW",
+      "name": "Fresh Finds: Pop",
+      "genre_tags": [
+        "pop",
+        "indie pop"
+      ],
+      "region": "United States"
+    },
+    {
+      "playlist_id": "5GowvGpQkxHa46cHHvY7qg",
+      "name": "Fresh Finds: Country",
+      "genre_tags": [
+        "country-pop",
+        "pop"
+      ],
+      "region": "United States"
+    }
+  ],
+  "reddit_subreddits": [
+    {
+      "name": "popheads",
+      "genre_tags": [
+        "pop",
+        "indie pop"
+      ]
+    },
+    {
+      "name": "indieheads",
+      "genre_tags": [
+        "indie pop",
+        "indie folk",
+        "alt rock"
+      ]
+    },
+    {
+      "name": "listentothis",
+      "genre_tags": [
+        "singer-songwriter",
+        "indie folk",
+        "alt rock"
+      ]
+    },
+    {
+      "name": "CountryMusic",
+      "genre_tags": [
+        "country-pop"
+      ]
+    },
+    {
+      "name": "TikTokMusic",
+      "genre_tags": [
+        "pop",
+        "indie pop",
+        "country-pop"
+      ]
+    },
+    {
+      "name": "folk",
+      "genre_tags": [
+        "indie folk"
+      ]
+    },
+    {
+      "name": "CountryMusicStuff",
+      "genre_tags": [
+        "country-pop"
+      ]
+    }
+  ],
+  "lastfm_tags": [
+    {
+      "name": "indie pop",
+      "genre_tags": [
+        "indie pop",
+        "pop"
+      ]
+    },
+    {
+      "name": "singer-songwriter",
+      "genre_tags": [
+        "singer-songwriter"
+      ]
+    },
+    {
+      "name": "indie folk",
+      "genre_tags": [
+        "indie folk"
+      ]
+    },
+    {
+      "name": "alternative rock",
+      "genre_tags": [
+        "alt rock"
+      ]
+    },
+    {
+      "name": "country pop",
+      "genre_tags": [
+        "country-pop",
+        "pop"
+      ]
+    }
+  ],
+  "rss_feeds": [
+    {
+      "id": "stereogum",
+      "name": "Stereogum",
+      "url": "https://www.stereogum.com/feed/",
+      "genre_tags": [
+        "indie pop",
+        "alt rock",
+        "indie folk"
+      ]
+    },
+    {
+      "id": "pitchfork",
+      "name": "Pitchfork",
+      "url": "https://pitchfork.com/feed/feed-news/rss",
+      "genre_tags": [
+        "pop",
+        "indie pop",
+        "alt rock"
+      ]
+    },
+    {
+      "id": "nprnewmusic",
+      "name": "NPR New Music",
+      "url": "https://feeds.npr.org/510310/podcast.xml",
+      "genre_tags": [
+        "singer-songwriter",
+        "indie folk",
+        "alt rock"
+      ]
+    },
+    {
+      "id": "googlenews_tiktok_music",
+      "name": "Google News TikTok Music",
+      "url": "https://news.google.com/rss/search?q=tiktok+new+music+artist",
+      "genre_tags": [
+        "pop",
+        "indie pop",
+        "country-pop"
+      ]
+    }
+  ]
+}

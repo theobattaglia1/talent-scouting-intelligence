@@ -1,0 +1,15 @@
+signal_name,definition_or_formula,required_fields,granularity,bucket
+momentum_log_growth,g_t = log(y_t+1)-log(y_{t-1}+1),any time series metric y,daily/weekly,core
+acceleration,a_t = g_t - g_{t-1},momentum_log_growth,daily/weekly,core
+sustained_accel_windows,count(a_t>0) over last N,acceleration,weekly,core
+size_normalized_velocity,(delta metric)/sqrt(followers+1) or /log(followers+2),metric deltas + follower/size proxy,daily/weekly,core
+engagement_rate,(likes+comments+shares)/(views or plays),"views, likes, comments (+shares if available)",daily,depth
+comment_specificity_score,keyword+semantic score over comment text,comment text,daily,depth
+playlist_add_velocity,delta(playlist_inclusions) per day,playlist occurrences,daily,network
+tastemaker_weighted_hits,sum(curator_score * edge),tastemaker-track edges + curator_score,daily,network
+echo_score,z_accel_platformA + z_accel_platformB with lag,platform-specific accel features,weekly,cross-platform
+spike_penalty,penalize sudden jumps without corroboration,time series + cross-platform signals,daily/weekly,anti-gaming
+wiki_pageviews_accel,acceleration on wikipedia pageviews,wikipedia pageviews API,daily,attention
+reddit_mention_velocity,delta mentions + upvote-weighted score,reddit posts/comments,daily,attention
+rss_mention_velocity,delta mentions in tastemaker RSS/blog feeds,rss items,daily,attention
+musicbrainz_collab_proximity,graph score via credits adjacency,musicbrainz + wikidata,weekly,network

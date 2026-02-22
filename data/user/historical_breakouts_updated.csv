@@ -1,0 +1,43 @@
+artist_name,primary_genre,breakout_window_estimate,breakout_track_or_moment,platform_path,regions_momentum,evidence_url_primary,evidence_url_secondary,notes
+EsDeeKid,other,2025-08,Press spike around album/news (approx),Press spike → streaming,US,https://people.com/who-is-esdeekid-lupus-shares-new-album-11755140,,Newer; validate with streaming velocity.
+Audrey Hobert,singer-songwriter,2025-01,Songwriting + collaboration visibility (approx),Credits → social discourse → streaming,US,https://www.sfchronicle.com/entertainment/article/audrey-hobert-sabrina-carpenter-20077501.php,,Validate with follower/stream growth.
+sombr,pop,2025-01,undressed (breakout conversation),Short-form → streaming,US,https://www.cosmopolitan.com/entertainment/music/a64923044/sombr-undressed-meaning/,,Validate with Spotify daily streams + TikTok usage.
+Lola Young,indie pop,2024-11,Messy / viral vocal clips (approx),TikTok → streaming,UK,https://en.wikipedia.org/wiki/Lola_Young,,Validate with TikTok sound usage + Spotify acceleration.
+MJ Lenderman,alt rock,2024-09,Manning Fireworks era (approx),Indie press + touring → streaming,US/UK,https://en.wikipedia.org/wiki/Manning_Fireworks,,Approximate; validate with streaming time series.
+Charli XCX,pop,2024-06,BRAT era (cultural step-change),Culture → streaming compounding → touring,US/UK,https://en.wikipedia.org/wiki/Brat_(album),,Not true 0→100; use as established→icon pattern.
+Gracie Abrams,pop,2024-06,Close to You / touring + Swift adjacency (approx),Touring + TikTok → streaming compounding,US/UK/AU,https://en.wikipedia.org/wiki/Gracie_Abrams,,Refine with Spotify daily streams.
+KATSEYE,pop,2024-06,Debut project rollout (approx),Short-form + fandom → streaming,US,https://en.wikipedia.org/wiki/Katseye,,Validate with follower/stream growth.
+Chappell Roan,pop,2024-04,"Good Luck, Babe! single + tour/press momentum",TikTok discovery → Spotify compounding → live conversion,US/UK,https://pitchfork.com/reviews/tracks/chappell-roan-good-luck-babe/,https://www.reddit.com/r/popheads/comments/1cyx11f/chappell_roan_has_been_going_viral_for_some_time/,High-confidence 2024 inflection; refine with streaming time series.
+Sabrina Carpenter,pop,2024-04,Espresso single,TikTok → Spotify → radio,US/UK/AU,https://time.com/6971143/sabrina-carpenter-espresso-song/,https://www.reddit.com/r/SabrinaCarpenter/comments/1w0w8m0/espresso_has_officially_surpassed_1_billion/,Late-career step-change.
+Djo,indie pop,2024-03,End of Beginning resurfaces and explodes,TikTok discovery → Spotify compounding,US/UK,https://www.theguardian.com/music/2024/mar/26/how-an-indie-actor-turned-musician-earned-a-huge-hit-on-tiktok-djo-end-of-beginning,,Song released earlier; viral inflection in 2024.
+Benson Boone,pop,2024-02,Beautiful Things single,TikTok + streaming + radio,US/UK/AU,https://en.wikipedia.org/wiki/Beautiful_Things_(Benson_Boone_song),,Release Feb 2024.
+Suki Waterhouse,indie pop,2024-01,Good Looking resurgence (approx),TikTok → streaming,UK/US,https://en.wikipedia.org/wiki/Suki_Waterhouse,,Catalog resurfacing pattern similar to DJO.
+Mitski,indie folk,2023-09,My Love Mine All Mine viral lift (approx),TikTok → streaming,US/UK,https://en.wikipedia.org/wiki/Mitski,,Catalog lift pattern.
+Olivia Dean,indie pop,2023-09,UK soul-pop momentum (approx),Playlists + BBC + touring,UK,https://en.wikipedia.org/wiki/Olivia_Dean,,Use BBC/Spotify timestamps to refine.
+Tate McRae,pop,2023-09,greedy single,TikTok → Spotify → radio,US/UK/AU,https://en.wikipedia.org/wiki/Greedy_(Tate_McRae_song),,Release date Sept 2023.
+Noah Kahan,indie folk,2023-05,Stick Season grows into long-tail hit,TikTok + playlists + touring compounding,US/UK/AU,https://en.wikipedia.org/wiki/Stick_Season,https://www.billboard.com/music/music-news/noah-kahan-stick-season-tour-new-album-1235328937/,Long-tail compounding archetype.
+The Last Dinner Party,alt rock,2023-04,Nothing Matters + UK press/touring,UK press + live → streaming compounding,UK,https://en.wikipedia.org/wiki/Nothing_Matters_(song),,Inflection pre-debut album.
+Reneé Rapp,pop,2023-01,Snow Angel era (approx),Fandom + touring → streaming,US,https://en.wikipedia.org/wiki/Ren%C3%A9e_Rapp,,Persona/brand heavy breakout pattern.
+Laufey,singer-songwriter,2022-10,Jazz-pop virality + Spotify growth (approx),TikTok → Spotify compounding,US/UK,https://en.wikipedia.org/wiki/Laufey,,Different lane but strong compounding profile.
+RAYE,pop,2022-10,Escapism. single (viral + charts),Short-form → streaming → radio,UK/US,https://music.apple.com/gb/song/escapism-feat-070-shake/1647253773,,Release Oct 2022.
+Role Model,pop,2022-08,Internet persona + touring lift (approx),TikTok + touring → streaming,US,https://en.wikipedia.org/wiki/Role_Model_(musician),,Useful comp for persona-forward male pop.
+d4vd,indie pop,2022-07,Romantic Homicide,TikTok → streaming,US,https://en.wikipedia.org/wiki/D4vd,,TikTok-first archetype.
+Central Cee,other,2022-06,Doja / 23 (approx),TikTok + streaming,UK,https://en.wikipedia.org/wiki/Central_Cee,,Not same lane but useful UK compounding pattern.
+Stephen Sanchez,pop,2022-06,Until I Found You,TikTok/YouTube → streaming,US/UK,https://en.wikipedia.org/wiki/Stephen_Sanchez,,Short-form propelled classic-pop vibe.
+Ethel Cain,indie folk,2022-05,Preacher's Daughter cult-to-mainstream arc (approx),Reddit/press → streaming + touring,US/UK,https://en.wikipedia.org/wiki/Ethel_Cain,,Cult worldbuilding + long-tail growth.
+Sam Ryder,pop,2022-05,Eurovision + TikTok singer,TikTok → mainstream TV,UK,https://en.wikipedia.org/wiki/Sam_Ryder,,Platform cross-over pattern.
+Lizzy McAlpine,singer-songwriter,2022-04,ceilings (viral + streaming acceleration),TikTok discovery → Spotify compounding,US,https://www.youtube.com/watch?v=GZ4IBx5P2uI,,Use TikTok sound usage + Spotify streams to validate inflection.
+Zach Bryan,country-pop,2022-04,Something in the Orange,Streaming + social + touring,US,https://en.wikipedia.org/wiki/Something_in_the_Orange,,Release 2022.
+Bakar,indie pop,2022-02,Hell N Back (late viral),TikTok → streaming,UK,https://en.wikipedia.org/wiki/Bakar_(musician),,Catalog discovery pattern.
+Sam Tompkins,singer-songwriter,2021-11,Short-form covers to originals (approx),TikTok/YouTube → streaming,UK,https://en.wikipedia.org/wiki/Sam_Tompkins,,Short-form singer pipeline.
+Caroline Polachek,indie pop,2021-10,Bunny Is a Rider / critical momentum (approx),Tastemakers → streaming,US/UK,https://en.wikipedia.org/wiki/Caroline_Polachek,,Tastemaker-to-mainstream pattern.
+PinkPantheress,indie pop,2021-09,Just for me / viral clips (approx),TikTok → streaming compounding,UK,https://en.wikipedia.org/wiki/PinkPantheress,,Useful TikTok-first archetype.
+Wet Leg,alt rock,2021-06,Chaise Longue,Indie press + viral → streaming compounding,UK,https://en.wikipedia.org/wiki/Chaise_Longue,,Modern UK breakout archetype.
+Olivia Rodrigo,pop,2021-01,drivers license debut single,Spotify + YouTube + TikTok + mainstream press,US/UK,https://people.com/olivia-rodrigo-releases-debut-single-drivers-license-7503551,,High-confidence inflection.
+The Kid LAROI,pop,2020-07,Without You / later STAY,TikTok + streaming + collab leverage,AU/US/UK,https://en.wikipedia.org/wiki/The_Kid_Laroi,,AU breakout → US scale.
+Beabadoobee,indie pop,2020-02,Coffee / viral lift (approx),TikTok → streaming,UK,https://en.wikipedia.org/wiki/Beabadoobee,,TikTok-fueled indie-pop breakout.
+Slayyyter,pop,2019-09,Internet growth era (approx),Internet fandom → streaming,US/UK,https://en.wikipedia.org/wiki/Slayyyter,,Earlier but useful as internet-native archetype.
+Dominic Fike,indie pop,2019-07,3 Nights / EP era (older),Streaming + press,US/UK,https://en.wikipedia.org/wiki/Dominic_Fike,,Older but relevant alt-pop crossover.
+Lewis Capaldi,singer-songwriter,2019-05,Someone You Loved,Streaming + radio,UK/US,https://en.wikipedia.org/wiki/Lewis_Capaldi,,"Older, but archetypal ballad breakout."
+Cameron Winter,,,,,,,,
+Geese,,,,,,,,

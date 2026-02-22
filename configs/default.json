@@ -1,0 +1,275 @@
+{
+  "project": {
+    "name": "talent-scouting-intelligence",
+    "timezone": "America/Los_Angeles",
+    "mock_days": 112
+  },
+  "paths": {
+    "snapshots": "outputs/snapshots.jsonl",
+    "candidates": "outputs/candidates.jsonl",
+    "features": "outputs/features.csv",
+    "scored": "outputs/scored.csv",
+    "inflections": "outputs/inflections.jsonl",
+    "tastemakers_csv": "outputs/tastemakers.csv",
+    "tastemakers_json": "outputs/tastemakers.json",
+    "alerts_jsonl": "outputs/alerts.jsonl",
+    "alerts_md": "outputs/alerts.md",
+    "alert_state": "outputs/state/alerts_state.json",
+    "report_md": "outputs/report.md",
+    "report_html": "outputs/report.html",
+    "report_chart": "outputs/top_candidates.png",
+    "backtest_json": "outputs/backtest.json",
+    "backtest_md": "outputs/backtest.md"
+  },
+  "genres": {
+    "priority": [
+      "pop",
+      "indie pop",
+      "singer-songwriter",
+      "country-pop",
+      "indie folk",
+      "alt rock"
+    ],
+    "prototypes": {
+      "pop": ["hook", "anthem", "radio", "chorus", "pop", "melodic"],
+      "indie pop": ["indie", "dreamy", "synth", "bedroom", "alt-pop"],
+      "singer-songwriter": ["acoustic", "lyric", "story", "intimate", "ballad"],
+      "country-pop": ["nashville", "country", "heartland", "twang", "crossover"],
+      "indie folk": ["folk", "banjo", "americana", "campfire", "harmonies"],
+      "alt rock": ["guitar", "alt rock", "grunge", "riff", "garage"]
+    }
+  },
+  "platforms": {
+    "spotify": {"enabled": true},
+    "youtube": {"enabled": true},
+    "tiktok": {"enabled": true},
+    "instagram": {"enabled": true},
+    "manual_import": {"enabled": false}
+  },
+  "ingest": {
+    "mode_default": "auto",
+    "append_history": true,
+    "history_retention_days": 365,
+    "auto": {
+      "source_registry": "data/sources/source_registry.json",
+      "include_mock_bootstrap": false,
+      "fallback_to_mock_if_empty": false,
+      "youtube": {
+        "enabled": true,
+        "max_recent_entries_per_channel": 12,
+        "max_age_days": 45,
+        "use_youtube_data_api_stats": true,
+        "api_key_env": "YOUTUBE_API_KEY",
+        "fallback_view_floor": 300,
+        "enrich_comment_threads": true,
+        "comment_threads_per_video": 12,
+        "comment_enrichment_video_cap": 18
+      },
+      "spotify": {
+        "enabled": true,
+        "client_id_env": "SPOTIFY_CLIENT_ID",
+        "client_secret_env": "SPOTIFY_CLIENT_SECRET",
+        "market": "US",
+        "max_tracks_per_playlist": 80
+      },
+      "reddit": {
+        "enabled": true,
+        "user_agent": "tsi-bot/0.1",
+        "max_posts_per_subreddit": 80,
+        "max_age_days": 14
+      },
+      "lastfm": {
+        "enabled": true,
+        "api_key_env": "LASTFM_API_KEY",
+        "limit_per_tag": 40
+      },
+      "rss": {
+        "enabled": true,
+        "max_entries_per_feed": 30,
+        "max_age_days": 21
+      },
+      "shortform_proxy": {
+        "enabled": true,
+        "min_strength": 2.0,
+        "keywords": [
+          "tiktok",
+          "tik tok",
+          "fyp",
+          "for you page",
+          "viral",
+          "trending sound",
+          "sound trend",
+          "capcut",
+          "reel",
+          "shorts"
+        ],
+        "source_weights": {
+          "reddit": 1.0,
+          "youtube": 0.8,
+          "rss": 0.65,
+          "instagram": 0.9,
+          "spotify": 0.25,
+          "lastfm": 0.4
+        }
+      },
+      "wikipedia": {
+        "enabled": true,
+        "lookback_days": 21,
+        "max_artists": 35
+      },
+      "musicbrainz": {
+        "enabled": true,
+        "max_artists": 25
+      }
+    }
+  },
+  "candidate_generation": {
+    "min_spotify_points": 1,
+    "tastemakers": {
+      "enabled": true,
+      "bayes_prior_success": 1.0,
+      "bayes_prior_trials": 6.0,
+      "prior_blend": 0.35,
+      "recency_half_life_days": 45,
+      "min_track_edges": 1
+    },
+    "low_follower_anomaly": {
+      "enabled": true,
+      "max_artist_followers_for_focus": 250000,
+      "min_velocity_norm_z": 0.9,
+      "min_engagement_z": 0.5
+    },
+    "cross_platform_echo": {
+      "enabled": true,
+      "min_echo_score": 0.6,
+      "lag_days": {
+        "tiktok_to_spotify": [3, 10],
+        "tiktok_proxy_to_spotify": [2, 10],
+        "youtube_to_spotify": [2, 9],
+        "instagram_to_spotify": [1, 7],
+        "reddit_to_spotify": [1, 7],
+        "lastfm_to_spotify": [2, 14],
+        "rss_to_spotify": [2, 14]
+      }
+    },
+    "geo_breakout": {
+      "enabled": true,
+      "min_regions_reporting": 2,
+      "min_diffusion_gain": 1
+    },
+    "seed_tracking": {
+      "enabled": true
+    }
+  },
+  "features": {
+    "min_spotify_points": 1,
+    "windows_days": [7, 14, 21],
+    "acceleration": {
+      "sustain_windows_required": 2,
+      "min_positive_accel_rate": 0.55
+    },
+    "compounding": {
+      "min_consistency": 0.5
+    },
+    "depth": {
+      "comment_specificity_terms": [
+        "lyrics",
+        "chorus",
+        "bridge",
+        "verse",
+        "on repeat",
+        "again and again",
+        "cant stop listening",
+        "this line",
+        "emotion",
+        "story"
+      ]
+    },
+    "anti_gaming": {
+      "spike_jump_threshold": 2.5,
+      "spike_reversion_threshold": -0.55,
+      "suspicious_view_comment_ratio": 1200,
+      "suspicious_like_comment_ratio": 80,
+      "suspicious_no_echo_max": 0.35,
+      "playlist_dependency_source_share": 0.8
+    }
+  },
+  "thresholds": {
+    "inflection": {
+      "size_norm_accel_min": 0.065,
+      "min_consecutive_windows": 2,
+      "min_corrob_buckets": 2,
+      "bucket_thresholds": {
+        "acceleration": 0.6,
+        "depth": 0.55,
+        "cross_platform": 0.55,
+        "network": 0.5,
+        "geo": 0.45,
+        "consistency": 0.55
+      }
+    },
+    "broke_proxy": {
+      "future_horizon_days": 42,
+      "min_streams": 50000,
+      "min_weekly_growth": 0.18,
+      "sustain_weeks": 3
+    }
+  },
+  "weights": {
+    "base": {
+      "momentum": 0.18,
+      "acceleration": 0.22,
+      "depth": 0.17,
+      "cross_platform": 0.16,
+      "network": 0.13,
+      "consistency": 0.09,
+      "geo": 0.05
+    },
+    "genre_adjustments": {
+      "pop": {"cross_platform": 0.04, "depth": -0.01},
+      "indie pop": {"depth": 0.02, "network": 0.02},
+      "singer-songwriter": {"depth": 0.05, "consistency": 0.03, "cross_platform": -0.03},
+      "country-pop": {"geo": 0.04, "consistency": 0.02},
+      "indie folk": {"depth": 0.04, "network": 0.03, "cross_platform": -0.04},
+      "alt rock": {"network": 0.03, "consistency": 0.03, "cross_platform": -0.02}
+    },
+    "penalties": {
+      "spike_only": 0.2,
+      "suspicious": 0.25,
+      "playlist_dependent": 0.15
+    }
+  },
+  "tastemaker_discovery": {
+    "top_n": 25,
+    "min_trials": 3,
+    "success_score_min": 0.52,
+    "novelty_follower_threshold": 120000,
+    "min_lead_days": 3,
+    "max_lead_score_days": 30,
+    "weights": {
+      "precision": 0.36,
+      "lead_time": 0.2,
+      "early_capture": 0.12,
+      "novelty": 0.12,
+      "genre_alignment": 0.1,
+      "reliability": 0.08,
+      "centrality": 0.02
+    }
+  },
+  "alerts": {
+    "min_watch_score": 0.45,
+    "min_score_delta": 0.06,
+    "include_risk_alerts": true,
+    "max_alerts": 25
+  },
+  "backtest": {
+    "top_k": 5,
+    "min_history_days": 28,
+    "replay_step_days": 7,
+    "prediction_horizon_days": 42
+  },
+  "report": {
+    "top_n": 20,
+    "include_chart": true
+  }
+}

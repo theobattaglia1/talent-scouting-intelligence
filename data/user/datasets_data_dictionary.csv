@@ -1,0 +1,13 @@
+file,column,description
+affinity_artists_updated.csv,artist_name,Canonical artist display name (string).
+affinity_artists_updated.csv,primary_genre,"One of: pop, indie pop, singer-songwriter, country-pop, indie folk, alt rock, other."
+affinity_artists_updated.csv,region_hint,"Primary market/scene hint (US, UK, AU, SE, etc.)."
+affinity_artists_updated.csv,priority,1–5 weighting for similarity relevance (5 highest).
+affinity_artists_updated.csv,affinity_anchor,Closest anchor reference from your seed tastes (string).
+affinity_artists_updated.csv,reason,Short rationale/what to learn from this reference.
+affinity_artists_updated.csv,data_confidence,0–1 confidence in spelling/identity mapping.
+affinity_artists_updated.csv,source_url,Optional verification link for edge/ambiguous names.
+historical_breakouts_updated.csv,breakout_window_estimate,Approx inflection month (YYYY-MM).
+historical_breakouts_updated.csv,breakout_track_or_moment,"Track, release, or moment that catalyzed acceleration."
+historical_breakouts_updated.csv,platform_path,"Likely discovery → compounding path (short-form, Spotify, radio, touring)."
+historical_breakouts_updated.csv,evidence_url_primary,Optional citation link supporting timing/moment.

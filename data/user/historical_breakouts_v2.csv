@@ -1,0 +1,54 @@
+artist_name,track_name,approx_window,iso_start,iso_end,primary_platform,region,lane,notes
+Sombr,(breakout track TBD),2025-Q1 (est.),,,,,,Observed rapid compounding; likely short-form discovery -> streaming conversion
+Chappell Roan,"Good Luck, Babe!",2024-04 (est.),,,,,,Cult-to-mainstream inflection; performance/persona clips + sustained streaming
+Geese,(momentum period),2025-H1 (est.),,,,,,Scene/tastemaker lift; critical momentum; touring/live word-of-mouth
+Cameron Winter,(momentum period),2025-H1 (est.),,,,,,Alt-rock emergence; tastemaker corroboration
+Olivia Rodrigo,drivers license,2021-01-08,2021-01-08,2021-01-08,,,,Debut single release; immediate record-breaking streams + #1 Hot 100 debut
+Djo,End of Beginning,2024-02 to 2024-03,2024-02-01,2024-03-01,,,,TikTok-driven second life; song (2022) issued as single 2024 after viral growth
+Olivia Dean,(breakout track TBD),2025 (est.),,,,,,Organic compounding; voice-forward; UK tastemakers
+Esdeekid,(breakout track TBD),2025 (est.),,,,,,Observed rapid momentum; needs platform trace
+Audrey Hobert,(breakout track TBD),2025 (est.),,,,,,Observed acceleration; songwriter persona + discovery clips
+Lizzy McAlpine,ceilings,2023-02 to 2023-03,2023-02-01,2023-03-01,,,,TikTok trend accelerated; later radio single release 2023-03-14
+Charli XCX,360 / brat era,2024 (est.),,,,,,Icon-stage compounding; cultural moment; sustained conversation
+Benson Boone,Beautiful Things,2024-01,2024-01-01,,spotify+youtube,US,ballad-pop,Fast climb on streaming + YouTube; good for pop-ballad velocity template.
+Sabrina Carpenter,Espresso,2024-04,2024-04-01,,spotify+tiktok_proxy,US/UK/AU,pop,Short-form driven then sustained streaming.
+Tate McRae,greedy,2023-09,2023-09-01,,spotify+tiktok_proxy,CA/US,pop,Short-form + radio/playlist sustain.
+Gracie Abrams,That’s So True,2024-11,2024-11-01,,spotify,US/UK,pop singer-songwriter,Late-year compounding; playlist depth.
+Taylor Swift,All Too Well (10 Minute Version),2021-11,2021-11-01,,spotify+youtube,US,pop singer-songwriter,Re-release/era moment; good for 'event spike vs sustain' discrimination.
+Charli XCX,360,2024-05,2024-05-01,,spotify+tiktok_proxy,UK/US,pop,Album-cycle surge; useful for established->icon inflection.
+Slayyyter,Miss Belladonna,2021-05,2021-05-01,,spotify,US,pop,Indie-pop niche breakout pattern.
+Sombr,,2025,2025-01-01,,multi,US,pop,User-specified; keep as seed even if track TBD.
+Chappell Roan,"Good Luck, Babe!",2024-04,2024-04-01,,spotify+tiktok_proxy,US,pop,Breakout single + catalog lift.
+Olivia Rodrigo,drivers license,2021-01,2021-01-01,,spotify+youtube,US,pop,Classic rapid viral->mainstream example.
+KATSEYE,Touch,,,,youtube+spotify,US/KR,pop,Group breakout template; fill date via backfill.
+Adele,Easy On Me,2021-10,2021-10-01,,spotify+youtube,UK/US,pop,Massive launch; good for anti-gaming/spike handling.
+Harry Styles,As It Was,2022-04,2022-04-01,,spotify,UK/US,pop,High-base with long sustain; helps calibrate saturation.
+Dua Lipa,Levitating,2020-10,2020-10-01,,spotify,UK/US,pop,Slow-burn sleeper growth template.
+The Kid LAROI,STAY,2021-07,2021-07-01,,spotify+tiktok_proxy,AU/US,pop,Collaborative breakout; cross-platform resonance.
+Noah Kahan,Stick Season,2022-10,2022-10-01,,spotify+tiktok_proxy,US/UK,indie folk,Slow build + later acceleration; very relevant.
+Phoebe Bridgers,Kyoto,2020-06,2020-06-01,,spotify,US,indie singer-songwriter,Indie critical-to-mainstream arc.
+boygenius,Not Strong Enough,2023-03,2023-03-01,,spotify,US/UK,indie,Supergroup; useful for network effects.
+The Japanese House,Boyhood,2023-09,2023-09-01,,spotify,UK,indie pop,Indie-pop album-cycle growth template.
+girl in red,Serotonin,2021-03,2021-03-01,,spotify+tiktok_proxy,NO/US,indie pop,Youth indie-pop viral + touring lift.
+Del Water Gap,Ode To A Conversation Stuck In Your Throat,,,,spotify,US,indie pop,Catalog sleeper; fill date via backfill.
+Joji,Glimpse of Us,2022-06,2022-06-01,,spotify+youtube,US,indie pop,High conversion ballad; multi-platform.
+Djo,End of Beginning,2024-02,2024-02-01,,spotify+tiktok_proxy,US,indie pop,Short-form rediscovery -> streaming compounding.
+Lizzy McAlpine,ceilings,,,,spotify+tiktok_proxy,US,singer-songwriter,TikTok-assisted sleeper; fill date via backfill.
+Lola Young,Messy,,,,spotify+tiktok_proxy,UK,indie pop,UK breakout template; fill date via backfill.
+Olivia Dean,Dive,,,,spotify,UK,singer-songwriter,UK organic growth; fill via backfill.
+Zach Bryan,Something in the Orange,2022-04,2022-04-01,,spotify,US,country-pop,Explosive streaming + touring; relevant.
+Bailey Zimmerman,Fall in Love,2022-02,2022-02-01,,spotify+tiktok_proxy,US,country-pop,Short-form + streaming breakout.
+Kacey Musgraves,Butterflies,2018-03,2018-03-01,,spotify,US,country-pop,"Older, but good for country-pop crossover."
+Gregory Alan Isakov,Amsterdam,,,,spotify,US,indie folk,Evergreen catalog with periodic revivals.
+Wet Leg,Chaise Longue,2021-06,2021-06-01,,youtube+spotify,UK,alt rock,Blog/tastemaker + streaming breakout.
+Måneskin,Beggin',2021-05,2021-05-01,,spotify+tiktok_proxy,IT/global,rock,Catalog track revival; strong for echo modeling.
+The Last Dinner Party,Nothing Matters,2023-04,2023-04-01,,spotify,UK,alt rock,UK alt-rock breakout + tastemaker.
+Arctic Monkeys,I Wanna Be Yours,,,,spotify+tiktok_proxy,UK,alt rock,Long-tail catalog revived via short-form.
+Twenty One Pilots,Stressed Out,2015-11,2015-11-01,,spotify+youtube,US,alt rock,"Older, but clean compounding template."
+The Neighbourhood,Sweater Weather,2013->2020s,,,spotify+tiktok_proxy,US,alt rock,Catalog revival; useful for anti-spike.
+LCD Soundsystem,New Body Rhumba,2022-06,2022-06-01,,spotify,US,alt rock,Legacy act example; calibrate baseline-size normalization.
+Geese,3D Country,2023-06,2023-06-01,,spotify,US,alt rock,User lane; breakout arc w/ tastemaker.
+Cameron Winter,,2025,2025-01-01,,spotify,US,alt rock,Seed; fill as data accumulates.
+MJ Lenderman,Hangover Game,2023-09,2023-09-01,,spotify,US,alt rock,Indie-rock groundswell template.
+Esdeekid,,2025,2025-01-01,,tiktok_proxy,US,pop,Seed; likely short-form first.
+Audrey Hobert,,2025,2025-01-01,,youtube+spotify,US,indie pop,Seed; early creator lift.

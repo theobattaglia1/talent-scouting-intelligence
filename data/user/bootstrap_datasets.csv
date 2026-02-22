@@ -1,0 +1,9 @@
+dataset,what_it_gives,access_mode,key_fields,use_in_pipeline
+spotify_charts_top200_viral50,Daily/weekly chart CSV exports; historical backfill to seed baseline and detect first appearances,download CSV; no auth,"track, artist, streams, rank, date, region",baseline / breakout proxy
+youtube_data_api_v3,Channel uploads + video stats; can snapshot forward; no historical timeseries without repeated snapshots,API key,"videoId, channelId, publishedAt, viewCount, likeCount, commentCount",primary
+lastfm_api,Tag charts + top tracks/artists; can provide historical charts at period endpoints,API key,"artist, track, playcount, rank, period",baseline
+wikipedia_pageviews_api,Daily pageviews per artist page; easy historical backfill,public API,"article, date, views",attention
+musicbrainz_api,"Artist/recording IDs, ISRCs, credits; identity resolution + collab graph",public API,"artist mbid, recording mbid, ISRC, relationships",entity resolution
+wikidata_sparql,"Enrich entity graph (labels, countries, genres, relationships)",public SPARQL,"QIDs, properties",entity resolution
+reddit_api,Subreddit/post signals; mention velocity; good early buzz proxy,OAuth optional; public endpoints exist,"subreddit, title, score, comments, created_utc",attention
+rss_feeds,Blogs/newsletters; tastemaker adds; low-cost,public,"title, published, link, snippet",tastemaker

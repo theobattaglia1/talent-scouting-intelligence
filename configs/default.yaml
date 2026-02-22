@@ -1,0 +1,417 @@
+project:
+  name: talent-scouting-intelligence
+  timezone: America/Los_Angeles
+  mock_days: 112
+
+paths:
+  snapshots: outputs/snapshots.jsonl
+  candidates: outputs/candidates.jsonl
+  features: outputs/features.csv
+  features_daily_track: outputs/features_daily_track.csv
+  features_weekly_track: outputs/features_weekly_track.csv
+  features_daily_artist: outputs/features_daily_artist.csv
+  features_weekly_artist: outputs/features_weekly_artist.csv
+  scored: outputs/scored.csv
+  inflections: outputs/inflections.jsonl
+  affinity_artists: data/user/affinity_artists.csv
+  breakout_templates: data/user/historical_breakouts_v2.csv
+  user_data_dictionary: data/user/datasets_data_dictionary.csv
+  signals_feature_schema: data/user/signals_feature_schema.csv
+  bootstrap_datasets: data/user/bootstrap_datasets.csv
+  starter_sources_additions: data/user/starter_sources_additions.csv
+  priors_identity_cache: outputs/state/user_priors_identity_cache.json
+  priors_resolution_csv: outputs/user_priors_resolution.csv
+  entity_resolution_csv: outputs/entity_resolution.csv
+  entity_resolution_json: outputs/state/entity_resolution.json
+  tastemakers_csv: outputs/tastemakers.csv
+  tastemakers_json: outputs/tastemakers.json
+  alerts_jsonl: outputs/alerts.jsonl
+  alerts_md: outputs/alerts.md
+  alert_state: outputs/state/alerts_state.json
+  report_md: outputs/report.md
+  report_html: outputs/report.html
+  report_chart: outputs/top_candidates.png
+  backtest_json: outputs/backtest.json
+  backtest_md: outputs/backtest.md
+  calibration_json: outputs/calibration.json
+  calibration_md: outputs/calibration.md
+  calibration_backtest_md: outputs/backtest_calibrated.md
+  tech_design_doc: docs/technical_design_v2.md
+  runbook_doc: docs/runbook.md
+  tracking_pool_state: outputs/state/tracking_pool.json
+
+genres:
+  priority:
+    - pop
+    - indie pop
+    - singer-songwriter
+    - country-pop
+    - indie folk
+    - alt rock
+  prototypes:
+    pop: ["hook", "anthem", "radio", "chorus", "pop", "melodic"]
+    indie pop: ["indie", "dreamy", "synth", "bedroom", "alt-pop"]
+    singer-songwriter: ["acoustic", "lyric", "story", "intimate", "ballad"]
+    country-pop: ["nashville", "country", "heartland", "twang", "crossover"]
+    indie folk: ["folk", "banjo", "americana", "campfire", "harmonies"]
+    alt rock: ["guitar", "alt rock", "grunge", "riff", "garage"]
+
+platforms:
+  spotify:
+    enabled: true
+  youtube:
+    enabled: true
+  tiktok:
+    enabled: true
+  instagram:
+    enabled: true
+  manual_import:
+    enabled: false
+
+ingest:
+  mode_default: auto
+  append_history: true
+  history_retention_days: 365
+  source_registry_bootstrap:
+    enabled: true
+    merge_on_ingest: true
+    strict_platform_allowlist: true
+  bootstrap_backfill:
+    enabled: true
+    spotify_charts_local_dir: data/bootstrap/spotify_charts
+    max_files_per_run: 80
+    lookback_days: 365
+    wiki_lookback_days: 180
+    wiki_max_artists: 30
+  auto:
+    source_registry: data/sources/source_registry.json
+    include_mock_bootstrap: false
+    fallback_to_mock_if_empty: false
+    youtube:
+      enabled: true
+      max_recent_entries_per_channel: 12
+      max_age_days: 45
+      use_youtube_data_api_stats: true
+      api_key_env: YOUTUBE_API_KEY
+      fallback_view_floor: 300
+      enrich_comment_threads: true
+      comment_threads_per_video: 12
+      comment_enrichment_video_cap: 18
+      tracking_max_videos_per_run: 90
+      tracking_comment_threads_per_video: 6
+      tracking_comment_video_cap: 30
+    spotify:
+      enabled: true
+      client_id_env: SPOTIFY_CLIENT_ID
+      client_secret_env: SPOTIFY_CLIENT_SECRET
+      market: US
+      max_tracks_per_playlist: 80
+      tracking_max_tracks_per_run: 150
+    reddit:
+      enabled: true
+      user_agent: tsi-bot/0.1
+      max_posts_per_subreddit: 80
+      max_age_days: 14
+    lastfm:
+      enabled: true
+      api_key_env: LASTFM_API_KEY
+      limit_per_tag: 40
+    rss:
+      enabled: true
+      max_entries_per_feed: 30
+      max_age_days: 21
+    shortform_proxy:
+      enabled: true
+      min_strength: 2.0
+      keywords:
+        - "tiktok"
+        - "tik tok"
+        - "fyp"
+        - "for you page"
+        - "viral"
+        - "trending sound"
+        - "sound trend"
+        - "capcut"
+        - "reel"
+        - "shorts"
+      source_weights:
+        reddit: 1.0
+        youtube: 0.8
+        rss: 0.65
+        instagram: 0.9
+        spotify: 0.25
+        lastfm: 0.4
+    wikipedia:
+      enabled: true
+      lookback_days: 21
+      max_artists: 35
+    musicbrainz:
+      enabled: true
+      max_artists: 25
+
+tracking_pool:
+  enabled: true
+  ttl_days: 30
+  max_items: 320
+  include_ui_feedback: true
+  remove_ignored: true
+  auto_add:
+    from_scored: true
+    from_scored_top_n: 120
+    min_final_score: 0.0
+    min_prior_gate: 0.0
+    min_trust_score: 0.0
+    include_baseline: true
+    include_inflections: true
+    skip_flagged: true
+    from_candidates: true
+    candidate_top_n: 160
+    candidate_min_priority: 0.2
+    candidate_skip_established: true
+  adapter_targets:
+    max_track_ids: 320
+    max_spotify_tracks: 180
+    max_spotify_artists: 120
+    max_youtube_videos: 120
+    max_youtube_channels: 80
+    max_artist_names: 200
+
+calibration:
+  enabled: true
+  min_similarity_artist_match: 0.9
+  threshold_grid:
+    final_score:
+      min: 0.05
+      max: 0.95
+      step: 0.02
+    trust_score:
+      min: 0.05
+      max: 0.95
+      step: 0.02
+  objective:
+    min_precision: 0.6
+    maximize: f1
+  default_thresholds:
+    final_score: 0.52
+    trust_score: 0.45
+  lead_time_window_days: 42
+
+popping:
+  enabled: true
+  min_corroborated_buckets: 2
+  score_weight: 0.45
+  trust_weight: 0.35
+  corroboration_weight: 0.2
+
+candidate_generation:
+  min_spotify_points: 1
+  established_min_points_override: 4
+  established_artist_track_footprint_min: 8
+  established_artist_require_strong_signals: true
+  established_artist_min_low_base_accel: 0.68
+  established_artist_min_echo: 0.62
+  established_artist_min_anomaly: 0.58
+  tastemakers:
+    enabled: true
+    bayes_prior_success: 1.0
+    bayes_prior_trials: 6.0
+    prior_blend: 0.35
+    recency_half_life_days: 45
+    min_track_edges: 1
+  low_follower_anomaly:
+    enabled: true
+    max_artist_followers_for_focus: 250000
+    min_velocity_norm_z: 0.9
+    min_engagement_z: 0.5
+  cross_platform_echo:
+    enabled: true
+    min_echo_score: 0.6
+    lag_days:
+      tiktok_to_spotify: [3, 10]
+      tiktok_proxy_to_spotify: [2, 10]
+      youtube_to_spotify: [2, 9]
+      instagram_to_spotify: [1, 7]
+      reddit_to_spotify: [1, 7]
+      lastfm_to_spotify: [2, 14]
+      rss_to_spotify: [2, 14]
+  geo_breakout:
+    enabled: true
+    min_regions_reporting: 2
+    min_diffusion_gain: 1
+  seed_tracking:
+    enabled: true
+
+features:
+  min_spotify_points: 1
+  windows_days: [7, 14, 21]
+  acceleration:
+    sustain_windows_required: 2
+    min_positive_accel_rate: 0.55
+  compounding:
+    min_consistency: 0.5
+  depth:
+    comment_specificity_terms:
+      - "lyrics"
+      - "chorus"
+      - "bridge"
+      - "verse"
+      - "on repeat"
+      - "again and again"
+      - "cant stop listening"
+      - "this line"
+      - "emotion"
+      - "story"
+  anti_gaming:
+    spike_jump_threshold: 2.5
+    spike_reversion_threshold: -0.55
+    suspicious_view_comment_ratio: 1200
+    suspicious_like_comment_ratio: 80
+    suspicious_no_echo_max: 0.35
+    playlist_dependency_source_share: 0.8
+
+thresholds:
+  inflection:
+    size_norm_accel_min: 0.065
+    min_consecutive_windows: 2
+    min_corrob_buckets: 2
+    bucket_thresholds:
+      acceleration: 0.6
+      depth: 0.55
+      cross_platform: 0.55
+      network: 0.5
+      geo: 0.45
+      consistency: 0.55
+  broke_proxy:
+    future_horizon_days: 42
+    min_streams: 50000
+    min_weekly_growth: 0.18
+    sustain_weeks: 3
+  trust:
+    history_full_points: 21
+    corrob_full_buckets: 4
+    min_views_for_quality: 5000
+    min_comments_for_quality: 20
+    min_history_days_for_quality: 7
+    low_threshold: 0.4
+    weights:
+      history: 0.35
+      evidence: 0.35
+      corroboration: 0.2
+      data_quality: 0.1
+    penalties:
+      spike_only: 0.2
+      suspicious: 0.25
+      playlist_dependent: 0.15
+      insufficient_history: 0.08
+      weak_evidence: 0.06
+      established_artist: 0.08
+
+weights:
+  base:
+    momentum: 0.18
+    acceleration: 0.22
+    depth: 0.17
+    cross_platform: 0.16
+    network: 0.13
+    consistency: 0.09
+    geo: 0.05
+  genre_adjustments:
+    pop:
+      cross_platform: 0.04
+      depth: -0.01
+    indie pop:
+      depth: 0.02
+      network: 0.02
+    singer-songwriter:
+      depth: 0.05
+      consistency: 0.03
+      cross_platform: -0.03
+    country-pop:
+      geo: 0.04
+      consistency: 0.02
+    indie folk:
+      depth: 0.04
+      network: 0.03
+      cross_platform: -0.04
+    alt rock:
+      network: 0.03
+      consistency: 0.03
+      cross_platform: -0.02
+  penalties:
+    spike_only: 0.2
+    suspicious: 0.25
+    playlist_dependent: 0.15
+    insufficient_history: 0.2
+    established_artist: 0.18
+
+priors:
+  enabled: true
+  affinity:
+    weight: 0.07
+    direct_match_weight: 0.6
+    genre_baseline_weight: 0.25
+    text_profile_weight: 0.15
+  path_similarity:
+    weight: 0.08
+    genre_match_bonus: 0.12
+    top_k_templates: 3
+  gating:
+    min_spotify_points: 7
+    min_acceleration_score: 0.3
+    min_depth_score: 0.18
+    min_cross_platform_score: 0.2
+    min_sustained_accel_windows: 1
+    established_max_followers: 1000000
+    insufficient_history_gate_multiplier: 0.05
+    weak_evidence_gate_multiplier: 0.25
+    low_signal_prior_gate_multiplier: 0.2
+    risk_flag_gate_multiplier: 0.1
+    established_gate_multiplier: 0.05
+    max_prior_boost_non_inflection: 0.05
+    max_prior_boost_inflection: 0.18
+  identity_resolution:
+    enabled: true
+    network_lookups: true
+    use_spotify_api: true
+    use_musicbrainz_api: false
+    spotify_client_id_env: SPOTIFY_CLIENT_ID
+    spotify_client_secret_env: SPOTIFY_CLIENT_SECRET
+    max_unresolved_per_run: 15
+    min_name_similarity: 0.92
+
+tastemaker_discovery:
+  top_n: 25
+  min_trials: 3
+  success_score_min: 0.52
+  novelty_follower_threshold: 120000
+  min_lead_days: 3
+  max_lead_score_days: 30
+  weights:
+    precision: 0.36
+    lead_time: 0.2
+    early_capture: 0.12
+    novelty: 0.12
+    genre_alignment: 0.1
+    reliability: 0.08
+    centrality: 0.02
+
+alerts:
+  min_watch_score: 0.45
+  min_score_delta: 0.06
+  include_risk_alerts: true
+  max_alerts: 25
+
+model_blend:
+  momentum_engine_weight: 0.7
+  creative_fit_weight: 0.3
+
+backtest:
+  top_k: 5
+  min_history_days: 28
+  replay_step_days: 7
+  prediction_horizon_days: 42
+  min_windows_for_calibration: 4
+
+report:
+  top_n: 20
+  include_chart: true
